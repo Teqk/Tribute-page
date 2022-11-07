@@ -1,0 +1,152 @@
+:root {
+    --macro-gap: 20px;
+    --color-text: #470858;
+    --color-text-light: #982d7f;
+    --color-primary: #bc4431;
+    --color-secondary: #fcb199;
+    --color-secondary-light:  #ffe6cf;
+    --color-background: #ffffff;
+}
+
+body {
+    margin: 0;
+    color: var(--color-text);
+    background-color: var(--color-background);
+    font-family: 'Merriweather', serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    font-family: 'Lilita One', cursive;
+    font-size: 3em;
+}
+
+img {
+    display: block;
+}
+
+.macro-container {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    margin: auto;
+    gap: var(--macro-gap);
+    padding: var(--macro-gap);
+}
+    .macro-container > * {
+        width: fit-content;
+    }
+
+.macro-container > .title {
+    font-size: 6rem;
+    font-family: 'Shrikhand', cursive;
+    line-height: 1;
+}
+    .macro-container > .title em {
+        color: var(--color-primary);
+        font-style: inherit;
+        text-shadow: 0px 0px var(--color-text);
+        position: relative;
+        left: 0px;
+        top: 0px;
+        transition: all .5s ease-in-out;
+    }
+        .macro-container > .title em:hover {
+            text-shadow: 5px 5px var(--color-text);
+            position: relative;
+            top: -5px;
+            left: -5px;
+        }
+
+    .macro-container > .title .subtitle {
+        position: relative;
+        top: -1rem;
+        font-size: 2rem;
+        font-family: 'Nanum Pen Script', cursive;
+        font-weight: bold;
+        color: var(--color-text-light)
+    }
+
+nav {
+}
+    nav ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        gap: 20px;
+    }
+        nav ul li {
+            font-family: 'Lilita One', cursive;
+            font-size: 1.5rem;
+            display: inline-block;
+        }
+            nav a {
+            text-decoration: none;
+            color: inherit;
+            padding: 10px 20px;
+            background-color: var(--color-secondary);
+            border-radius: 200px;
+            transition: all .2s ease-in-out;
+            }
+                nav a:hover {
+                    background-color: var(--color-secondary-light);
+                }
+
+.content-container {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    gap: 40px 20px;
+}
+
+article.cat {
+    display: flex;
+    flex-direction: column;
+    width: min-content;
+    gap: 5px;
+}
+    article.cat:hover img {
+        border: 5px solid var(--color-secondary-light);
+    }
+    article.cat:hover .title {
+        color: var(--color-primary);
+    }
+    article.cat img {
+        width: 240px;
+        height: 360px;
+        border-radius: 10px;
+        background-position: center center;
+        object-fit: cover;
+        border: 5px solid var(--color-secondary);
+        transition: all .2s ease-in-out;
+
+    }
+    article.cat .title {
+        font-size: 3rem;
+        font-family: 'Nanum Pen Script', cursive;
+        line-height: 1;
+        transition: all .2s ease-in-out;  
+    }
+        article.cat .title .subtitle {
+            font-size: 0.5em;
+            vertical-align: baseline;
+            text-transform: lowercase;
+            color: var(--color-text-light);
+
+        }
+            article.cat .title .subtitle::before {
+                content: "(";
+            }
+            article.cat .title .subtitle::after {
+                content: ")";
+            }
+    article.cat p {
+        margin: 0;
+        width: 100%;
+        word-spacing: 150%;
+    }
+
+    .copyright {
+        width: fit-content;
+        margin: auto;
+    }
